@@ -17,7 +17,27 @@ const create = (req, res) => {
     .catch((err) => res.status(500).json(err))
 }
 
+const updateFavoris = (req, res) => {
+  const { number, comment, isOwned } = req.body
+  Favoris.updateOne({ number }, { comment, isOwned })
+    .then((pokemon) => {
+      res.status(201).json(pokemon)
+    })
+    .catch((err) => res.status(500).json(err))
+}
+
+const deleteFavoris = (req, res) => {
+  const {number} = req.params
+  Favoris.deleteOne({ number })
+    .then((pokemon) => {
+      res.status(201).json(pokemon)
+    })
+    .catch((err) => res.status(500).json(err))
+}
+
 module.exports = {
   index,
-  create
+  create,
+  updateFavoris,
+  deleteFavoris
 }
