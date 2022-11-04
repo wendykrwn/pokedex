@@ -7,6 +7,7 @@ const mongoose = require("mongoose")
 
 var indexRouter = require("./routes/index")
 const pokemonRouter = require("./routes/pokemon")
+const favorisRouter = require("./routes/favoris")
 
 var app = express()
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.use("/", indexRouter)
 app.use("/pokemon", pokemonRouter)
+app.use("/favoris", favorisRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

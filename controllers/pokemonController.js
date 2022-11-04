@@ -1,5 +1,5 @@
-const index = (req, res) => {
-  const {id} = req.params
+const pokemon = (req, res) => {
+  const { id } = req.params
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
     .then((res) => res.json())
     .then((data) => {
@@ -11,5 +11,5 @@ const index = (req, res) => {
 }
 
 module.exports = {
-  index,
+  pokemon,
 }

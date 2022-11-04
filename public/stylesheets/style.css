@@ -5,3 +5,9 @@ body{
 table, th, td {
   border: 1px solid;
 }
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}

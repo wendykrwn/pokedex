@@ -1,9 +1,10 @@
 var express = require("express")
 var router = express.Router()
-const indexController = require("../controllers/pokemonController")
+const {pokemon} = require("../controllers/pokemonController")
 
-/* GET home page. */
-router.get("/:id", indexController.index)
+
+// router.get("/", index)
+router.get("/:id", pokemon)
 
 
 module.exports = router

@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>
-    <%= title %>
-  </title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 
 <body>
   <h1>
-    <%= title %>
+    Liste des favoris
   </h1>
+</body>
   <ol>
-    <% pokemon.forEach((pokemon,i)=> { %>
+    <% favoris.forEach((favoris,i)=> { %>
       <li>
-        <a href="/pokemon/<%= i+1 %>"><%= pokemon.name %></a>
+        <a href="/pokemon/<%= favoris.number%>">
+          <%= favoris.name %>
+        </a>
       </li>
       <% }); %>
   </ol>
-</body>
-
 </html>
