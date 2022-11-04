@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= pokemon.name %>
+  </h1>
+  <div>
+    <img src=" <%= pokemon.sprites.front_default %>" alt="image">
+  </div>
+  <table>
+    <tr>
+      <td>nom</td>
+      <td><%= pokemon.name %></td>
+    </tr>
+    <tr>
+      <td>Taille</td>
+      <td><%= pokemon.height %></td>
+    </tr>
+    <tr>
+      <td>Abilities</td>
+      
+      <td>
+        <ul>
+          <% pokemon.abilities.forEach(({ability},i)=> { %>
+            <li>
+              <%= ability.name %>
+            </li>
+            <% }); %>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Base experience</td>
+      <td>
+        <%= pokemon.base_experience %>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

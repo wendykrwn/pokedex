@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  </p>
+  <ol>
+    <% pokemon.forEach((pokemon,i)=> { %>
+      <li>
+        <a href="/pokemon/<%= i+1 %>"><%= pokemon.name %></a>
+      </li>
+      <% }); %>
+  </ol>
+</body>
+
+</html>
