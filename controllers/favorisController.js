@@ -3,7 +3,7 @@ const Favoris = require('../models/favorisModel');
 
 const index = (req, res) => { 
     Favoris.find((err, favoris) => {
-        res.status(200).render('favoris', { favoris })
+        res.status(200).render('mesfavoris', { favoris })
     })
 }
 

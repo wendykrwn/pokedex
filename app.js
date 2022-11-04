@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.use("/", indexRouter)
 app.use("/pokemon", pokemonRouter)
-app.use("/favoris", favorisRouter)
+app.use("/mesfavoris", favorisRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

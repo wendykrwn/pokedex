@@ -47,7 +47,7 @@
 
   <div>
     <h2>Ajouter au Favoris</h2>
-    <form class="form-input" action="/favoris" method="post">
+    <form class="form-input" action="/mesfavoris" method="post">
       <input type="text" name="name" value="<%= pokemon.name %>" readonly hidden>
       <input type="number" name="number" value="<%= pokemon.id %>" readonly hidden>
       <div>
@@ -63,7 +63,7 @@
     </form>
   </div>
   <div>
-    <form action="/favoris/delete/<%=pokemon.id %>" method="get">
+    <form action="/mesfavoris/delete/<%=pokemon.id %>" method="get">
       <button type="submit">Supprimer des favoris</a>
     </form>
   </div>
