@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+    <h1>
+      <%= pokemon.name %> 
+      <% if(favoris.isOwned) {%> 
+        <img width="20px" src="/images/pokeball.png" alt="pokeball.png">
+      <% } %> 
+    </h1>
+    <div>
+      <img src=" <%= pokemon.sprites.front_default %>" alt="image">
+    </div>
+    <table>
+      <tr>
+        <td>nom</td>
+        <td>
+          <%= pokemon.name %>
+        </td>
+      </tr>
+      <tr>
+        <td>Taille</td>
+        <td>
+          <%= pokemon.height %>
+        </td>
+      </tr>
+      <tr>
+        <td>Abilities</td>
+        <td>
+          <ul>
+            <% pokemon.abilities.forEach(({ability},i)=> { %>
+              <li>
+                <%= ability.name %>
+              </li>
+              <% }); %>
+          </ul>
+        </td>
+      </tr>
+    
+      <tr>
+        <td>Base experience</td>
+        <td>
+          <%= pokemon.base_experience %>
+        </td>
+      </tr>
+    </table>
+  <div>
+    <h2>Modifier <%= favoris.name %> n° <%= favoris.number %> </h2>
+    <form class="form-input" action="/mesfavoris/update/<%= favoris.number %>" method="post">
+      <div>
+        <label for="isOwned">Possédé : </label>
+        <input id="isOwned" type="checkbox" name="isOwned">
+      </div>
+      <div>
+        <textarea name="comment"><%= favoris.comment %></textarea>
+      </div>
+      <div>
+        <button type="submit">Modifier les informations</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+
+</html>

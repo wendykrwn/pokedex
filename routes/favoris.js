@@ -4,14 +4,16 @@ const {
   index,
   create,
   updateFavoris,
-  deleteFavoris
+  deleteFavoris,
+  findFavoris
 } = require("../controllers/favorisController")
 
 /* GET home page. */
 router.get("/", index)
+router.get("/:number", findFavoris)
 router.get("/delete/:number", deleteFavoris)
 router.post("/", create)
-router.put("/", updateFavoris)
+router.post("/update/:number", updateFavoris)
 
 
 
